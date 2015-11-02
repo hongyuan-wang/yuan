@@ -6,13 +6,23 @@ package com.yuanwhy.yuan;
 public class Token {
     private TokenType type;
     private int lineNumber;
+    private String text;
 
-    public static final Token EOF = new Token(-1, TokenType.Identifier);
-    public static final String EOL = "\\n";
+    public static final Token EOF = new Token(TokenType.Identifier, -1, null);
+    public static final Token EOL = new Token(TokenType.Identifier, "\\n");
 
-    public Token(int lineNumber, TokenType type) {
-        this.lineNumber = lineNumber;
+    public Token() {
+    }
+
+    public Token(TokenType type, String text) {
         this.type = type;
+        this.text = text;
+    }
+
+    public Token(TokenType type, int lineNumber, String text) {
+        this.type = type;
+        this.lineNumber = lineNumber;
+        this.text = text;
     }
 
     public void setType(TokenType type) {
@@ -21,5 +31,30 @@ public class Token {
 
     public TokenType getType() {
         return type;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public int getLineNumber() {
+        return lineNumber;
+    }
+
+    public void setLineNumber(int lineNumber) {
+        this.lineNumber = lineNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Token{" +
+                "type=" + type +
+                ", lineNumber=" + lineNumber +
+                ", text='" + text + '\'' +
+                '}';
     }
 }
