@@ -5,7 +5,7 @@ package com.yuanwhy.yuan;
  * yuan语言支持三种类型token
  */
 public enum TokenType {
-    Identifier, //标识符
+    Identifier,  //标识符
     Number,      //数字字面量
     String       //字符串字面量
 }

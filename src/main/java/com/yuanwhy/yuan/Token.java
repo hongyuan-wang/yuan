@@ -1,5 +1,7 @@
 package com.yuanwhy.yuan;
 
+import java.util.regex.Pattern;
+
 /**
  * Created by why on 2015/10/27.
  */
@@ -30,6 +32,13 @@ public class Token {
     }
 
     public TokenType getType() {
+        if(type == null && text != null) {
+            if(Pattern.matches("[0-9]+", text)) {
+                type = TokenType.Number;
+            } else {
+                type = TokenType.Identifier;
+            }
+        }
         return type;
     }
 

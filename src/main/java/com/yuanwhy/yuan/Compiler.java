@@ -12,6 +12,9 @@ public class Compiler {
         String sourcePath = "sample.yuan";
         Lexer lexer = new Lexer(ClassLoader.getSystemResource(sourcePath).getPath());
         List<Token> tokens = lexer.getTokens();
+        for (int i = 0; i < tokens.size(); i++) {
+            tokens.get(i).getType();
+        }
         System.out.println(tokens);
     }
 }
