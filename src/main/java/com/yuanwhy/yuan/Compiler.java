@@ -1,5 +1,7 @@
 package com.yuanwhy.yuan;
 
+import com.yuanwhy.yuan.ast.AST;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,5 +18,12 @@ public class Compiler {
             tokens.get(i).getType();
         }
         System.out.println(tokens);
+
+        Parser parser = new Parser();
+        parser.readTokens(tokens);
+        parser.parse();
+        AST ast = parser.getAST();
+        System.out.println(ast);
+
     }
 }
