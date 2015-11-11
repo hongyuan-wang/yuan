@@ -6,6 +6,7 @@ package com.yuanwhy.yuan;
  */
 public enum TokenType {
     Identifier,  //标识符
+    Keyword,     //关键字
     Number,      //数字字面量
     String       //字符串字面量
 }

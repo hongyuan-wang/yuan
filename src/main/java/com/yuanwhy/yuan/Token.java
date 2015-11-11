@@ -33,7 +33,9 @@ public class Token {
 
     public TokenType getType() {
         if(type == null && text != null) {
-            if(Pattern.matches("[0-9]+", text)) {
+            if(isKeyword()) {
+                type = TokenType.Keyword;
+            } else if(Pattern.matches("[0-9]+", text)) {
                 type = TokenType.Number;
             } else {
                 type = TokenType.Identifier;
@@ -58,6 +60,13 @@ public class Token {
         this.lineNumber = lineNumber;
     }
 
+    private boolean isKeyword() {
+        if (text.equals("while") || text.equals("if") || text.equals("else")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     @Override
     public String toString() {
         return "Token{" +

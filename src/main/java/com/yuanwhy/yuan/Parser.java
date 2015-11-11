@@ -1,6 +1,8 @@
 package com.yuanwhy.yuan;
 
 import com.yuanwhy.yuan.ast.AST;
+import com.yuanwhy.yuan.ast.Block;
+import com.yuanwhy.yuan.ast.Statement;
 
 import java.util.List;
 
@@ -16,7 +18,12 @@ public class Parser {
     }
 
     public void parse(){
-
+        Block block = new Block();
+        List<Statement> statementList = block.getStatements();
+        Statement statement;
+        for (Token token : tokens) {
+            
+        }
     }
 
     public AST getAST() {
