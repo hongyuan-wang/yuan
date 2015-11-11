@@ -1,9 +1,9 @@
 package com.yuanwhy.yuan;
 
 import com.yuanwhy.yuan.ast.AST;
+import com.yuanwhy.yuan.token.Token;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

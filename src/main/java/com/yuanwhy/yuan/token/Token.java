@@ -1,4 +1,6 @@
-package com.yuanwhy.yuan;
+package com.yuanwhy.yuan.token;
+
+import com.yuanwhy.yuan.TokenType;
 
 import java.util.regex.Pattern;
 

@@ -3,6 +3,8 @@ package com.yuanwhy.yuan;
 import com.yuanwhy.yuan.ast.AST;
 import com.yuanwhy.yuan.ast.Block;
 import com.yuanwhy.yuan.ast.Statement;
+import com.yuanwhy.yuan.ast.VariableDeclarationStatement;
+import com.yuanwhy.yuan.token.Token;
 
 import java.util.List;
 
@@ -17,12 +19,18 @@ public class Parser {
         this.tokens = tokens;
     }
 
-    public void parse(){
+    public void parse() {
         Block block = new Block();
         List<Statement> statementList = block.getStatements();
         Statement statement;
-        for (Token token : tokens) {
-            
+        for (int i = 0; i < tokens.size(); i++) {
+            if (tokens.get(i).getType() == TokenType.Identifier) {
+                if (tokens.get(i + 1).getText().equals("=")) {
+                    statement = new VariableDeclarationStatement();
+                }
+            } else {
+
+            }
         }
     }
 

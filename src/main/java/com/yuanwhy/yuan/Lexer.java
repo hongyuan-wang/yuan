@@ -1,5 +1,7 @@
 package com.yuanwhy.yuan;
 
+import com.yuanwhy.yuan.token.Token;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
