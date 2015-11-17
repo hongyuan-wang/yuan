@@ -1,6 +1,6 @@
 package com.yuanwhy.yuan;
 
-import com.yuanwhy.yuan.ast.AST;
+import com.yuanwhy.yuan.ast.ASTNode;
 import com.yuanwhy.yuan.token.Token;
 
 import java.io.IOException;
@@ -21,8 +21,7 @@ public class Compiler {
 
         Parser parser = new Parser();
         parser.readTokens(tokens);
-        parser.parse();
-        AST ast = parser.getAST();
+        ASTNode ast = parser.getAST();
         System.out.println(ast);
 
     }
